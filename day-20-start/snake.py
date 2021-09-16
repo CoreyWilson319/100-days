@@ -53,4 +53,12 @@ class Snake:
         last = self.snake_body[-1].position()
         self.add_segment(last)
 
+    def reset(self):
+        for segment in self.snake_body:
+            segment.goto(1000, 0)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
+
+
 
